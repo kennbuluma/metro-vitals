@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Vitals Medical</title>
+    <style>
+        /* CSS Variables based on your color palette */
+        :root {
+            --mauve: #cbaacb;
+            --mauve-light: #f9f7f9;
+            --dark-grey: #363636;
+            --white: #ffffff;
+            --dull-red: #a65c5c;
+            --dull-red-hover: #8b4a4a;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-grey);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 15px;
+            color: var(--dark-grey);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--dark-grey);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-grey);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--mauve);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        nav a:hover {
+            color: var(--mauve);
+        }
+
+        .btn {
+            background-color: var(--dull-red);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--dull-red-hover);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--mauve-light);
+            padding: 80px 5%;
+            text-align: center;
+            border-bottom: 4px solid var(--mauve);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #555;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 5%;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background-color: var(--mauve-light);
+            border-top: 5px solid var(--mauve);
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .service-card h3 {
+            color: var(--dull-red);
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 5%;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--mauve-light);
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-col {
+            margin-bottom: 20px;
+            min-width: 250px;
+        }
+
+        .footer-col h4 {
+            color: var(--mauve);
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .footer-col {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Metro<span>Vitals</span></div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#book" class="btn">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Modern Care for the Busy City</h1>
+        <p>At Metro Vitals Medical, we combine state-of-the-art urban healthcare with the compassionate, personalized attention you deserve. Your health shouldn't have to wait.</p>
+        <a href="#book" class="btn">Schedule Your Visit Today</a>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Clinic Services</h2>
+        <p>Comprehensive medical care tailored to your lifestyle.</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>General Practice</h3>
+                <p>Routine check-ups, physicals, and ongoing management of chronic conditions to keep you at your best.</p>
+            </div>
+            <div class="service-card">
+                <h3>Urgent Care</h3>
+                <p>Fast, effective treatment for minor injuries, sudden illnesses, and non-life-threatening emergencies.</p>
+            </div>
+            <div class="service-card">
+                <h3>Lab & Diagnostics</h3>
+                <p>On-site blood work, screenings, and essential diagnostic testing for rapid, accurate results.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="cta-section">
+        <h2>Ready to prioritize your health?</h2>
+        <p>Walk-ins are welcome, but appointments guarantee you get in and out on your schedule.</p>
+        <br>
+        <a href="mailto:appointments@metrovitals.com" class="btn">Contact Us Now</a>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-col">
+            <h4>Metro Vitals Medical</h4>
+            <p>Your health at the heart of the city.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Info</h4>
+            <p>Email: info@metrovitals.com</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Address: 100 Central Ave, Metro Center</p>
+        </div>
+        <div class="footer-col">
+            <h4>Clinic Hours</h4>
+            <p>Mon - Fri: 8:00 AM - 8:00 PM</p>
+            <p>Sat - Sun: 9:00 AM - 4:00 PM</p>
+        </div>
+    </footer>
+
+</body>
+</html>

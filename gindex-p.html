@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Vitals Medical & Pharmacy</title>
+    <style>
+        /* CSS Variables */
+        :root {
+            --mauve: #cbaacb;
+            --mauve-light: #f9f7f9;
+            --dark-grey: #363636;
+            --white: #ffffff;
+            --dull-red: #a65c5c;
+            --dull-red-hover: #8b4a4a;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-grey);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 15px;
+            color: var(--dark-grey);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--dark-grey);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-grey);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--mauve);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        nav a:hover {
+            color: var(--mauve);
+        }
+
+        .btn {
+            background-color: var(--dull-red);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: var(--dull-red-hover);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--mauve-light);
+            padding: 80px 5%;
+            text-align: center;
+            border-bottom: 4px solid var(--mauve);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #555;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 5%;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background-color: var(--mauve-light);
+            border-top: 5px solid var(--mauve);
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .service-card h3 {
+            color: var(--dull-red);
+        }
+
+        /* Pharmacy Section */
+        .pharmacy {
+            padding: 60px 5%;
+            background-color: var(--mauve-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            border-top: 2px dashed var(--mauve);
+            border-bottom: 2px dashed var(--mauve);
+        }
+
+        .pharmacy-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .pharmacy-text h2 {
+            color: var(--dull-red);
+            font-size: 2.2rem;
+        }
+
+        .pharmacy-features {
+            flex: 1;
+            min-width: 300px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .pharmacy-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pharmacy-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.1rem;
+        }
+
+        .pharmacy-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pharmacy-features li strong {
+            color: var(--dark-grey);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 5%;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--white);
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-col {
+            margin-bottom: 20px;
+            min-width: 250px;
+        }
+
+        .footer-col h4 {
+            color: var(--mauve);
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .pharmacy {
+                flex-direction: column;
+            }
+            .footer-col {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Metro<span>Vitals</span></div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pharmacy">Pharmacy</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#book" class="btn">Book Appointment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Modern Care for the Busy City</h1>
+        <p>At Metro Vitals Medical, we combine state-of-the-art urban healthcare with the compassionate, personalized attention you deserve. Your health shouldn't have to wait.</p>
+        <a href="#book" class="btn">Schedule Your Visit Today</a>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Clinic Services</h2>
+        <p>Comprehensive medical care tailored to your lifestyle.</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>General Practice</h3>
+                <p>Routine check-ups, physicals, and ongoing management of chronic conditions to keep you at your best.</p>
+            </div>
+            <div class="service-card">
+                <h3>Urgent Care</h3>
+                <p>Fast, effective treatment for minor injuries, sudden illnesses, and non-life-threatening emergencies.</p>
+            </div>
+            <div class="service-card">
+                <h3>Lab & Diagnostics</h3>
+                <p>On-site blood work, screenings, and essential diagnostic testing for rapid, accurate results.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pharmacy" class="pharmacy">
+        <div class="pharmacy-text">
+            <h2>Our Roots: The Metro Vitals Pharmacy</h2>
+            <p>Before we expanded into a full-service medical clinic, Metro Vitals started as a trusted neighborhood pharmacy. Today, that same pharmacy is the heartbeat of our facility.</p>
+            <p>Skip the extra trip across town. Walk out of your doctor's appointment and step right up to our pharmacy counter to have your prescriptions filled on the spot.</p>
+        </div>
+        
+        <div class="pharmacy-features">
+            <ul>
+                <li>
+                    <strong>Prescription Fulfillment</strong>
+                    Fast, accurate dispensing directly after your consultation.
+                </li>
+                <li>
+                    <strong>Over-The-Counter Essentials</strong>
+                    A curated selection of wellness products, vitamins, and first-aid supplies.
+                </li>
+                <li>
+                    <strong>Expert Consultations</strong>
+                    Direct access to our head pharmacists for medication management and advice.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="book" class="cta-section">
+        <h2>Ready to prioritize your health?</h2>
+        <p>Walk-ins are welcome at the clinic and the pharmacy, but appointments guarantee you get in and out on your schedule.</p>
+        <br>
+        <a href="mailto:appointments@metrovitals.com" class="btn">Contact Us Now</a>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-col">
+            <h4>Metro Vitals Medical</h4>
+            <p>Your health at the heart of the city.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Info</h4>
+            <p>Email: info@metrovitals.com</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Address: 100 Central Ave, Metro Center</p>
+        </div>
+        <div class="footer-col">
+            <h4>Operating Hours</h4>
+            <p><strong>Clinic:</strong> Mon - Fri: 8:00 AM - 8:00 PM</p>
+            <p><strong>Pharmacy:</strong> Mon - Fri: 8:00 AM - 9:00 PM</p>
+            <p><strong>Weekends:</strong> 9:00 AM - 4:00 PM (Both)</p>
+        </div>
+    </footer>
+
+</body>
+</html>
